@@ -8,16 +8,16 @@ public class Extrato {
 
 	@Id
 	private String id;
-	private String descricao;
-	private String valor;
-	// private String status;
+	private String description;
+	private String value;
+	private Integer status;
 
-	public Extrato(String id, String descricao, String valor) {
+	public Extrato(String id, String description, String value, Integer status) {
 		super();
 		this.id = id;
-		this.descricao = descricao;
-		this.valor = valor;
-		// this.status = status;
+		this.description = description;
+		this.value = value;
+		this.status = status;
 	}
 
 	public String getId() {
@@ -28,20 +28,28 @@ public class Extrato {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getValor() {
-		return valor;
+	public String getValue() {
+		return value;
 	}
 
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 }

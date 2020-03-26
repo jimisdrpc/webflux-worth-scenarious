@@ -1,0 +1,12 @@
+{
+  "Extrato": {
+  	"description": "credit",
+    "value": "R$1.000,00",
+    "status": 11
+  },
+  "Extrato": {
+  	"description": "debit",  
+    "value": "R$2.000,00",
+    "status": 99
+  }
+}

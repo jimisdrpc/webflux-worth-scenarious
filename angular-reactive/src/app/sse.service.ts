@@ -17,7 +17,7 @@ export class SseService {
       eventSource.onmessage = event => {
         this._zone.run(() => {
           let json = JSON.parse(event.data);
-          this.extratos.push(new Extrato(json['id'], json['descricao'], json['valor']));
+          this.extratos.push(new Extrato(json['id'], json['description'], json['value'], json['status']));
           observer.next(this.extratos);
         });
       };

@@ -26,3 +26,8 @@ mvnw.cmd
 #Visual Studio Code
 .editorconfig
 .vscode
+node_modules/
+node_modules
+/node_modules
+/node_modules/
+.bin/

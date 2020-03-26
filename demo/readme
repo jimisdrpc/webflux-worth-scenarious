@@ -1,3 +1,8 @@
+#Flux with single return
 curl -H "Accept: text/event-stream" "http://localhost:8080/extrato/paged?page=0&size=1"
- 
+
+#Flux with multiple return 
 curl -H "Accept: text/event-stream" "http://localhost:8080/extrato"
+
+#Mono
+curl -H "Accept: text/event-stream" "http://localhost:8080/extrato/1"

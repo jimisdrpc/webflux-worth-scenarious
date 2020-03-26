@@ -34,8 +34,14 @@ public class ExtratoController {
 		return extratoRepository.findAll().delayElements(Duration.ofMillis(5000));
 	}
 
+//	@GetMapping("/paged")
+//	public Mono<Extrato> getExtratoPaged(final @RequestParam(name = "page") int page,
+//			final @RequestParam(name = "size") int size) {
+//		return extratoRepository.retrieveAllExtratosPaged(PageRequest.of(page, size));
+//	}
+
 	@GetMapping("/paged")
-	public Flux<Extrato> getExtratoFlux(final @RequestParam(name = "page") int page,
+	public Flux<Extrato> getExtratoPaged(final @RequestParam(name = "page") int page,
 			final @RequestParam(name = "size") int size) {
 		return extratoRepository.retrieveAllExtratosPaged(PageRequest.of(page, size));
 	}

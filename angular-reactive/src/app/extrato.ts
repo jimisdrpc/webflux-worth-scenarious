@@ -1,11 +1,13 @@
 export class Extrato {
     id: string;
-    descricao: string;
-    valor: string;
+    description: string;
+    value: string;
+    status: number;
 
-    constructor(id: string, descricao: string, valor: string) {
+    constructor(id: string, description: string, value: string, status: number) {
         this.id = id;
-        this.descricao = descricao;
-        this.valor = valor;
+        this.description = description;
+        this.value = value;
+        this.status = status;
     }
 }

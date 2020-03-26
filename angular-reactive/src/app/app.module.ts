@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 import { SseService } from './sse.service';
+import { PollingService } from './polling.service';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     AppService,
-    SseService
+    SseService,
+    PollingService
   ],
   bootstrap: [AppComponent]
 })

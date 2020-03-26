@@ -1,11 +1,14 @@
-<h1>Extrato</h1>
+<h1>Extrato - Lido de um Flux Paginado sem SSE, apenas um retorno</h1>
 <div *ngFor="let item of restItems">
-  <div>{{item.descricao}}</div>
+  <div>{{item.description}}</div>
 </div>
 
 
-<h1>Extrato Stream</h1>
+<h1>Extrato - Lido de um Flux com SSE, múltiplos retornos intervalados</h1>
 <div *ngFor="let ext of extratos$ | async">
-  <div>{{ext.descricao}}</div>
+  <div>{{ext.description}}</div>
 </div>
 
+
+<h1>Extrato - Lido status de um Mono por polling</h1>
+<div>{{(polledTransacaoStatus$|async)?.status}}</div>

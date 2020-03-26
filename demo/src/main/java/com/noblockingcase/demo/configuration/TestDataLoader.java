@@ -3,8 +3,10 @@ package com.noblockingcase.demo.configuration;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.function.LongSupplier;
+import java.util.stream.BaseStream;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 import com.noblockingcase.demo.model.Extrato;
@@ -35,12 +37,20 @@ public class TestDataLoader implements CommandLineRunner {
 					return l++;
 				}
 			};
-			BufferedReader bufferedReader = new BufferedReader(
-					new InputStreamReader(getClass().getClassLoader().getResourceAsStream("carga-teste.txt")));
-			Flux.fromStream(bufferedReader.lines().filter(l -> !l.trim().isEmpty())
-					.map(l -> extratoRepository
-							.save(new Extrato(String.valueOf(longSupplier.getAsLong()), "Qualquer descrição", l))))
-					.subscribe(m -> log.info("Carga Teste: {}", m.block()));
+
+			extratoRepository.deleteAll();
+
+			extratoRepository
+					.save(new Extrato(String.valueOf(longSupplier.getAsLong()), "Qualquer descrição 1", "texto 1", 1))
+					.block();
+
+			extratoRepository
+					.save(new Extrato(String.valueOf(longSupplier.getAsLong()), "Qualquer descrição 2", "texto 2", 2))
+					.block();
+
+			extratoRepository
+					.save(new Extrato(String.valueOf(longSupplier.getAsLong()), "Qualquer descrição 3", "texto 3", 3))
+					.block();
 
 		}
 	}
